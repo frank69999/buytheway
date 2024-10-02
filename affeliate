@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Products</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .product { border: 1px solid #ccc; padding: 10px; margin: 10px; display: inline-block; width: 200px; }
+        img { max-width: 100%; }
+    </style>
+</head>
+<body>
+
+    <h1>Featured Products</h1>
+
+    <div id="products"></div>
+
+    <script>
+        const products = [
+            { name: "Product 1", img: "link_to_image_1", affiliateLink: "affiliate_link_1" },
+            { name: "Product 2", img: "link_to_image_2", affiliateLink: "affiliate_link_2" },
+            { name: "Product 3", img: "link_to_image_3", affiliateLink: "affiliate_link_3" }
+        ];
+
+        const productContainer = document.getElementById('products');
+        
+        products.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.classList.add('product');
+            productDiv.innerHTML = `
+                <h2>${product.name}</h2>
+                <img src="${product.img}" alt="${product.name}">
+                <a href="${product.affiliateLink}" target="_blank">Buy Now</a>
+            `;
+            productContainer.appendChild(productDiv);
+        });
+    </script>
+
+</body>
+</html>
